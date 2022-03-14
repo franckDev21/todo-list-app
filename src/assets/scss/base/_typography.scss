@@ -1,0 +1,12 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+input[type=text],.text{
+    border: none;
+    outline: none;
+    padding: .8rem .5rem;
+    color: $light-grayish-blue;
+    font-size: $font-size - 1;
+}

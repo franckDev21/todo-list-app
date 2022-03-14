@@ -1,0 +1,36 @@
+// breakpoints
+@mixin breakpoint-up($size){
+    @media (min-width: map-get($breakpoints-up,$size)) {
+        @content
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width: map-get($breakpoints-down,$size)) {
+        @content
+    }
+}
+
+// flex position
+@mixin flex($a-i: center, $j-c: space-between,$d: row,$d-type: flex){
+    display: $d-type;
+    justify-content: $j-c;
+    align-items: $a-i;
+    flex-direction: $d;
+}
+
+// full size position
+@mixin full-screen($p : fixed){
+    position: $p;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    @content
+}
+
+// pseudo
+@mixin pseudo($ctn:'',$d-type: inline-block){
+    display: $d-type;
+    content: $ctn;
+}

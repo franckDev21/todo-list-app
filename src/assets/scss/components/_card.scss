@@ -1,0 +1,134 @@
+.card{
+  border-radius: .3rem;
+  margin: 0 1rem;
+  overflow: hidden;
+  background-color: #42b983;
+  position: relative;
+  top: -1.8rem;
+  z-index: 2;
+  @media (min-width: 590px) {
+    top: -2.4rem;
+  }
+  &__field{
+    background-color: $very-dark-desaturated-blue;
+    @include flex($j-c: flex-start,$a-i: center);
+    padding: 0 1.5rem;
+    overflow: hidden;
+
+    &:not(:last-child){
+      border-bottom: 1px solid $very-dark-grayish-blue;
+    }
+
+    .text{
+      text-align: left;
+      word-break: break-word;
+      width: calc(100% - 2.6rem);
+      cursor: pointer;
+      padding: 1.1rem .5rem;
+      @media (min-width: 590px) {
+        padding: 1.4rem .5rem;
+      }
+    }
+
+    svg.croix{
+      color: $dark-grayish-blue;
+    }
+    @media (min-width: 590px) {
+      svg.croix{
+        opacity: 0;
+        transition: opacity .3s ease-in-out , color .2s ease;
+      }
+
+      &:hover{
+        svg.croix{
+          opacity: 1;
+          &:hover{
+            cursor: pointer;
+            color: $bright-blue;
+          }
+          &:active{
+            transform: scale(.8);
+          }
+        }
+      }
+    }
+
+    label {
+      position: relative;
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 50%;
+      border: 1px solid $dark-grayish-blue;
+      svg{
+        display: none;
+      }
+    }
+
+    &--completed{
+      label{
+        display: inline-block;
+        background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        svg{
+          display: initial;
+        }
+      }
+      .text{
+        opacity: .6;
+        text-decoration: line-through;
+      }
+    }
+
+    &--end{
+      justify-content: space-between;
+      padding-top: 1.1rem;
+      padding-bottom: 1.1rem;
+      color: $light-grayish-blue;
+      font-size: 15px;
+      & > div{
+        color: $dark-grayish-blue;
+      }
+    }
+
+    .links{
+      display: none;
+      @media (min-width: 590px) {
+        display: block;
+        @include flex;
+        justify-content: space-between;
+        a{
+          display: inline-block;
+          font-size: 15px;
+          color: $dark-grayish-blue;
+          font-weight: bold;
+          margin-left: 2rem;
+          transition: color .3s ease-in-out;
+          &.active{
+            color: $bright-blue;
+          }
+          &:hover{
+            color: lighten($bright-blue,10);
+          }
+        }
+      }
+    }
+  }
+
+  .clear{
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  &--light{
+    .card__field{
+      background-color: $very-light-gray;
+      &:not(:last-child){
+        border-bottom: 1px solid $very-light-grayish-blue;
+      }
+      .text{
+        color: $dark-grayish-blue;
+      }
+    }
+  }
+}

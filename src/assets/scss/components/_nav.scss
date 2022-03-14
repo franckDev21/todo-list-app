@@ -1,0 +1,24 @@
+.nav{
+  @include flex;
+  margin-bottom: 1.5rem !important;
+  position: relative;
+  z-index: 2;
+  @media (min-width: 590px) {
+    margin-bottom: 2.3rem !important;
+  }
+  &__logo{
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .7rem;
+    color: $very-light-gray;
+
+    @media (min-width: 590px) {
+      font-size: 2.6rem;
+      letter-spacing: .8rem;
+    }
+  }
+  &__icon{
+    cursor: pointer;
+  }
+}
